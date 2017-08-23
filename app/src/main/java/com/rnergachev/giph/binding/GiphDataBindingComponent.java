@@ -2,8 +2,6 @@ package com.rnergachev.giph.binding;
 
 import android.databinding.BindingAdapter;
 import android.databinding.DataBindingComponent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
