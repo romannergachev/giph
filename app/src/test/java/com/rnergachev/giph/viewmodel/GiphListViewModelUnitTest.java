@@ -1,7 +1,7 @@
 package com.rnergachev.giph.viewmodel;
 
 import com.rnergachev.giph.data.GiphyRepo;
-import com.rnergachev.giph.data.model.GiphData;
+import com.rnergachev.giph.data.model.RandomGiphData;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -20,14 +20,14 @@ public class GiphListViewModelUnitTest {
     @Mock
     private GiphyRepo repo;
     private GiphListViewModel vm;
-    private ArrayList<GiphData> data;
+    private ArrayList<RandomGiphData> data;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         vm = new GiphListViewModel(repo);
         data = new ArrayList<>();
-        data.add(new GiphData());
-        data.add(new GiphData());
+        data.add(new RandomGiphData());
+        data.add(new RandomGiphData());
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.rnergachev.giph.R;
 import com.rnergachev.giph.data.model.GiphData;
+import com.rnergachev.giph.data.model.RandomGiphData;
 import com.rnergachev.giph.data.network.GiphyApi;
 import com.rnergachev.giph.data.network.response.RandomResponse;
 import com.rnergachev.giph.data.network.response.TrendingResponse;
@@ -44,7 +45,7 @@ public class GiphyRepo {
      * Load random giph
      * @return {@link Single} random giph
      */
-    public Single<GiphData> getRandom() {
+    public Single<RandomGiphData> getRandom() {
         return api.getRandom(key)
             .map(RandomResponse::getData)
             .subscribeOn(Schedulers.io())

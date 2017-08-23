@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.rnergachev.giph.BR;
 import com.rnergachev.giph.R;
 import com.rnergachev.giph.data.model.GiphData;
+import com.rnergachev.giph.data.model.RandomGiphData;
 import com.rnergachev.giph.handler.GiphListAdapterHandler;
 import com.rnergachev.giph.viewmodel.GiphListViewModel;
 

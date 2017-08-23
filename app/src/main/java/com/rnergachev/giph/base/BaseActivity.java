@@ -44,7 +44,7 @@ public abstract class BaseActivity<VM extends BaseViewModel> extends AppCompatAc
             vh = new ViewModelHolder();
             fm.beginTransaction()
                 .add(vh, VIEW_HOLDER)
-                .commitAllowingStateLoss();
+                .commitNow();
         }
 
         return vh;

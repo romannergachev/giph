@@ -2,5 +2,6 @@
     <string name="app_name">Giph</string>
     <string name="base_url">http://api.giphy.com/v1/gifs/</string>
     <string name="detailed_giph">DETAILED_GIPH</string>
+    <!--TODO: insert your api key here -->
     <string name="key">key</string>
 </resources>

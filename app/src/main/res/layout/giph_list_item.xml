@@ -20,8 +20,9 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:imageUrl="@{model.itemsList[position].smallUrl}"/>
+            android:scaleType="centerCrop"
+            app:imageUrl="@{model.itemsList[position].smallStill}"/>
     </LinearLayout>
 </layout>

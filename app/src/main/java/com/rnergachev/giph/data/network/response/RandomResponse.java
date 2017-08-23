@@ -1,22 +1,22 @@
 package com.rnergachev.giph.data.network.response;
 
-import com.rnergachev.giph.data.model.GiphData;
+import com.rnergachev.giph.data.model.RandomGiphData;
 
 /**
  * Retrofit Random response
  */
 public class RandomResponse {
-    private GiphData data;
+    private RandomGiphData data;
 
     public RandomResponse() {
 
     }
 
-    public RandomResponse(GiphData data) {
+    public RandomResponse(RandomGiphData data) {
         this.data = data;
     }
 
-    public GiphData getData() {
+    public RandomGiphData getData() {
         return data;
     }
 }

@@ -6,6 +6,7 @@ import android.util.Log;
 import com.rnergachev.giph.base.BaseViewModel;
 import com.rnergachev.giph.data.GiphyRepo;
 import com.rnergachev.giph.data.model.GiphData;
+import com.rnergachev.giph.data.model.RandomGiphData;
 
 import javax.inject.Inject;
 
@@ -29,19 +30,16 @@ public class GiphListViewModel implements BaseViewModel {
     /**
      * Loads items into list
      */
-    public void loadItems() {
-        subscriptions.add(repo.getTrending(1).subscribe(
-            list -> {
-                itemsList.clear();
-                itemsList.addAll(list);
-            }, e -> Log.e(getClass().getName(), "Update failed", e)
+    public void loadItems(int offset) {
+        subscriptions.add(repo.getTrending(offset).subscribe(
+            itemsList::addAll,
+            e -> Log.e(getClass().getName(), "Update failed", e)
         ));
     }
 
 
     @Override
     public void clear() {
-        subscriptions.clear();
         subscriptions.dispose();
     }
 }

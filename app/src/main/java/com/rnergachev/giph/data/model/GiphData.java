@@ -9,56 +9,47 @@ import com.google.gson.annotations.SerializedName;
  * Giph content
  */
 public class GiphData implements Parcelable {
-    @SerializedName("image_original_url")
-    private String originalUrl;
-    @SerializedName("fixed_height_small_url")
-    private String smallUrl;
-    @SerializedName("fixed_height_small_still_url")
-    private String smallStillUrl;
+
+    @SerializedName("original")
+    private ImageParams original;
+    @SerializedName("original_still")
+    private ImageParams smallStill;
 
     public GiphData() {}
 
-    public GiphData(String originalUrl, String smallUrl, String smallStillUrl) {
-        this.originalUrl = originalUrl;
-        this.smallUrl = smallUrl;
-        this.smallStillUrl = smallStillUrl;
+    public GiphData(ImageParams originalUrl, ImageParams smallUrl, ImageParams smallStillUrl) {
+        this.original = originalUrl;
+        this.smallStill = smallStillUrl;
     }
 
-    public String getOriginalUrl() {
-        return originalUrl;
+    public ImageParams getOriginal() {
+        return original;
     }
 
-    public String getSmallUrl() {
-        return smallUrl;
+    public ImageParams getSmallStill() {
+        return smallStill;
     }
 
-    public String getSmallStillUrl() {
-        return smallStillUrl;
+    protected GiphData(Parcel in) {
+        original = in.readParcelable(ImageParams.class.getClassLoader());
+        smallStill = in.readParcelable(ImageParams.class.getClassLoader());
     }
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(original, flags);
+        dest.writeParcelable(smallStill, flags);
+    }
 
     @Override
     public int describeContents() {
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.originalUrl);
-        dest.writeString(this.smallUrl);
-        dest.writeString(this.smallStillUrl);
-    }
-
-    protected GiphData(Parcel in) {
-        this.originalUrl = in.readString();
-        this.smallUrl = in.readString();
-        this.smallStillUrl = in.readString();
-    }
-
     public static final Creator<GiphData> CREATOR = new Creator<GiphData>() {
         @Override
-        public GiphData createFromParcel(Parcel source) {
-            return new GiphData(source);
+        public GiphData createFromParcel(Parcel in) {
+            return new GiphData(in);
         }
 
         @Override
