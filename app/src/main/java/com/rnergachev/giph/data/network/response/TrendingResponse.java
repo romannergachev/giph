@@ -10,11 +10,11 @@ import java.util.List;
  */
 public class TrendingResponse {
 
-    private static class Description {
+    public static class Description {
 
         private GiphData images;
 
-        Description(GiphData images) {
+        public Description(GiphData images) {
             this.images = images;
         }
 
